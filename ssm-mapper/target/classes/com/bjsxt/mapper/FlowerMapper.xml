@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--映射配置文件负责和接口绑定,这里指明了接口的位置全限定路径-->
+<mapper namespace="com.bjsxt.mapper.FlowerMapper">
+	<!--resultType本来是权限定路径,核心配置mybatis.xml配制了简化-->
+    <select id="selectAll" resultType="flower">
+
+       select * from  flower
+
+    </select>
+
+    <insert id="insert">
+
+        insert into  flower values (DEFAULT ,#{name},#{price},#{production})
+
+    </insert>
+
+    <update id="update">
+
+        UPDATE  flower  set name=#{name},price=#{price},production=#{production}  where  id =#{id}
+
+    </update>
+
+    <delete id="delete">
+
+        DELETE   FROM   flower  where  id =#{param1}
+
+    </delete>
+
+
+</mapper>
